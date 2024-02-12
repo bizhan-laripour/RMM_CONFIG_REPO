@@ -11,7 +11,7 @@ agent:
 
 elastic:
   server:
-    port: 127.0.0.1:9200
+    port: elasticsearch:9200
 spring:
   application:
     name: worker
