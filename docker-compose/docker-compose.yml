@@ -1,0 +1,117 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo:6-jammy
+    restart: on-failure
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=rootuser
+      - MONGO_INITDB_ROOT_PASSWORD=rootpass
+
+
+
+
+  mongo-express:
+    depends_on:
+      mongodb:
+        condition: service_started
+    image: mongo-express
+    restart: on-failure
+    container_name: mongo-express
+    ports:
+      - 8083:8083
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=rootuser
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=rootpass
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+  rabbitmq:
+    image: rabbitmq:management
+    restart: on-failure
+    container_name: rabbitmq
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+      - 5672:5672
+      - 15672:15672
+
+
+
+
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.10.4
+    restart: on-failure
+    container_name: elasticsearch-container
+    ports:
+      - 9200:9200
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+
+  config-server:
+    image: config
+    restart: on-failure
+    container_name: config
+    ports:
+      - 8888:8888
+    environment:
+      - spring.cloud.config.server.git.uri=https://github.com/bizhan-laripour/RMM_CONFIG_REPO.git
+      - spring.cloud.config.server.git.default-label=main
+
+  discovery:
+    image: discovery
+    depends_on:
+      config-server:
+        condition: service_started
+    restart: on-failure
+    container_name: discovery
+    ports:
+      - 8761:8761
+    environment:
+      - spring.cloud.config.uri=http://config-server:8888
+
+
+  agent:
+    depends_on:
+      mongodb:
+        condition: service_started
+      discovery:
+        condition: service_started
+      rabbitmq:
+        condition: service_started
+    image: agent
+    restart: on-failure
+    container_name: agent
+    environment:
+#      - SPRING_RABBITMQ_HOST=rabbitmq
+#      - SPRING_RABBITMQ_PORT=5672
+#      - SPRING_DATA_MONGODB_HOST=mongodb
+#      - SPRING_DATA_MONGODB_PORT=27017
+      - eureka.client.service-url.defaultZone=http://discovery:8761/eureka
+      - spring.cloud.config.uri=http://config-server:8888
+    ports:
+      - 8080:8080
+
+
+  worker:
+    depends_on:
+      discovery:
+        condition: service_started
+      elasticsearch:
+        condition: service_started
+    image: worker
+    restart: on-failure
+    container_name: worker
+    ports:
+      - 8082:8082
+    environment:
+#      - ELASTIC_SERVER_PORT=elasticsearch:9200
+      - eureka.client.service-url.defaultZone=http://discovery:8761/eureka
+      - spring.cloud.config.uri=http://config-server:8888
+
+
+
