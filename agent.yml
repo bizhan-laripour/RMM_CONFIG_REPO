@@ -40,6 +40,8 @@ logging:
         data: debug
 agent:
   ip: 185.165.117.108
+server:
+  port: 8080
 
 
 
