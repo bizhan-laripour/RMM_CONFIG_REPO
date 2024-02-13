@@ -9,9 +9,7 @@ agent:
     from: 185.165.117.108
     to: 185.165.117.125
 
-elastic:
-  server:
-    port: elasticsearch:9200
+
 spring:
   application:
     name: worker
