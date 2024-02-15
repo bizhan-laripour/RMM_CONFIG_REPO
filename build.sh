@@ -6,7 +6,7 @@ GREEN='\033[01;32m'
 echo -e "
 
 
-${bold} ${NONE}Hello from RMM. Im ${GREEN}Bizhan Laripour ${NONE}who had written this shell .
+${bold} ${NONE}Hello from RMM. Im ${GREEN}Bizhan Laripour ${NONE}who have written this shell script.
 
 
 
@@ -16,28 +16,28 @@ ${bold} ${NONE}Hello from RMM. Im ${GREEN}Bizhan Laripour ${NONE}who had written
 
 
 if test -d ./RMM_CONFIG_REPO; then
-  echo  -e "${normal} ${YELLOW} RMM_CONFIG_REPO exists. we will remove it and clone new one from github ${NONE}"
+  echo  -e "${normal}${YELLOW}RMM_CONFIG_REPO exists. we will remove it and clone new one from github ${NONE}"
   sudo -S  sudo rm -rf ./RMM_CONFIG_REPO
 
 fi
 
 if test -d ./RMM_DISCOVERY; then
-  echo -e  "${normal} ${YELLOW} RMM_DISCOVERY exists. we will remove it and clone new one from github ${NONE}"
+  echo -e  "${normal}${YELLOW}RMM_DISCOVERY exists. we will remove it and clone new one from github ${NONE}"
   sudo -S  sudo rm -rf ./RMM_DISCOVERY
 fi
 
 if test -d ./RMM_CONFIG_SERVER; then
-  echo -e "${normal} ${YELLOW} RMM_CONFIG_SERVER exists. we will remove it and clone new one from github ${NONE}"
+  echo -e "${normal}${YELLOW}RMM_CONFIG_SERVER exists. we will remove it and clone new one from github ${NONE}"
   sudo -S  sudo rm -rf ./RMM_CONFIG_SERVER
 fi
 
 if test -d ./RMM_WORKER; then
-  echo -e "${normal} ${YELLOW} RMM_WORKER exists. we will remove it and clone new one from github ${NONE}"
+  echo -e "${normal}${YELLOW}RMM_WORKER exists. we will remove it and clone new one from github ${NONE}"
   sudo -S  sudo rm -rf ./RMM_WORKER
 fi
 
 if test -d ./RMM_AGENT; then
-  echo -e "${normal} ${YELLOW} RMM_AGENT exists. we will remove it and clone new one from github ${NONE}"
+  echo -e "${normal}${YELLOW}RMM_AGENT exists. we will remove it and clone new one from github ${NONE}"
   sudo -S  sudo rm -rf ./RMM_AGENT
 fi
 git clone https://github.com/bizhan-laripour/RMM_CONFIG_REPO.git
@@ -60,7 +60,7 @@ sudo -S  sudo docker compose up -d
 echo -e "
 
 
-${bold} ${GREEN}Thanks for joining us with this project.
+${bold}${GREEN}Thanks for joining us with this project.
  Good Luck.
 
  Im looking forward to answer any question
