@@ -60,7 +60,7 @@ sudo -S  sudo docker compose up -d
 echo -e "
 
 
-${bold} ${GREEN} Thanks for joining us with this project.
+${bold} ${GREEN}Thanks for joining us with this project.
  Good Luck.
 
  Im looking forward to answer any question
