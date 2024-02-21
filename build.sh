@@ -8,7 +8,7 @@ GREEN='\033[01;32m'
 echo -e "
 
 
-${bold} ${NONE}Hello from RMM. Im ${GREEN}Bizhan Laripour ${NONE}who has written this shell script.
+${bold} ${NONE}Hello from ${RED}RMM${NONE}. Im ${GREEN}Bizhan Laripour ${NONE}who has written this shell script.
 
 
 
@@ -75,10 +75,10 @@ echo -e "
 
 
 ${bold}${GREEN}Thanks for joining us with this project.
- Good Luck.
+Good Luck.
 
- Im looking forward to answer any question
- Email: bizhan.laripour.herat@gmail.com
+Im looking forward to answer any question
+Email: bizhan.laripour.herat@gmail.com
 
 
 
