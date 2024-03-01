@@ -27,7 +27,8 @@ for vals in "${all[@]}";do
 if [ "$vals" !=  "" ]; then
 git clone https://github.com/bizhan-laripour/$vals.git                                                   
 fi                                                   
-done                                                    
+done     
+if [ "${#exist[@]}" != 0 ];then
 for ((i=0;i<"${#exist[@]}"; i++));do
         number=$(( $i + 1 ))
  echo $number : "${exist[$i]}" exist
@@ -62,7 +63,7 @@ cd ../RMM_WORKER || exit
  sudo -S  sudo docker build -t worker .
 cd ../RMM_CONFIG_REPO/docker-compose || exit
 sudo -S  sudo docker compose up -d
-
+fi
 
 echo -e "
 
