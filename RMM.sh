@@ -53,3 +53,30 @@ git clone https://github.com/bizhan-laripour/${exist[$i]
 fi
 done
 done
+
+cd RMM_CONFIG_SERVER || exit
+sudo -S  sudo docker build -t config .
+cd ../RMM_DISCOVERY || exit
+sudo -S  sudo docker build -t discovery .
+cd ../RMM_AGENT || exit
+ sudo -S  sudo docker build -t agent .
+cd ../RMM_WORKER || exit
+ sudo -S  sudo docker build -t worker .
+cd ../RMM_CONFIG_REPO/docker-compose || exit
+sudo -S  sudo docker compose up -d
+
+
+echo -e "
+
+
+${bold}${GREEN}Thanks for joining us with this project.
+Good Luck.
+
+Im looking forward to answer any question
+Email: bizhan.laripour.herat@gmail.com
+
+
+
+
+
+"
