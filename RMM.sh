@@ -36,7 +36,7 @@ echo "
 
 
 which module do you want to replace from git? just
- enter number of module with comma seperate:
+ enter number of module with comma seperate type:
  
  "
 read -r modules
