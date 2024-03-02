@@ -52,7 +52,6 @@ rm -rf ${exist[$i]}
 git clone https://github.com/bizhan-laripour/${exist[$i]
 }.git
 
-#echo "${exist[$i]}"
 fi
 done
 done
