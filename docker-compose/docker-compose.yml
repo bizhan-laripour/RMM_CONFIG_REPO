@@ -10,6 +10,9 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=rootuser
       - MONGO_INITDB_ROOT_PASSWORD=rootpass
+    volumes:
+      - dbdata6:/data/db
+
 
 
 
