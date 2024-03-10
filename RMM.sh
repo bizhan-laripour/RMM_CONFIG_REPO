@@ -2,7 +2,7 @@ NONE='\033[00m'
 RED='\033[0;31m'    
 YELLOW='\033[01;33m'  
 GREEN='\033[01;32m'  
-echo -e "Hello from ${RED}RMM${NONE}. Im ${GREEN}Bizhan Laripour ${NONE}and wish you enjoy with this project. 
+echo -e "Hello from ${RED}RMM${NONE}. I wish you enjoy with this project. 
 
 "                                                    
 declare -a all=(   
