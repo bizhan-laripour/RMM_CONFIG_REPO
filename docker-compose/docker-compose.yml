@@ -58,6 +58,10 @@ services:
     environment:
       - discovery.type=single-node
       - xpack.security.enabled=false
+    volumes:
+      - ./esdata:/usr/share/elasticsearch/data
+
+      
 
   config-server:
     image: config
@@ -68,6 +72,8 @@ services:
     environment:
       - spring.cloud.config.server.git.uri=https://github.com/bizhan-laripour/RMM_CONFIG_REPO.git
       - spring.cloud.config.server.git.default-label=main
+
+      
 
   discovery:
     image: discovery
@@ -80,6 +86,8 @@ services:
       - 8761:8761
     environment:
       - spring.cloud.config.uri=http://config-server:8888
+
+      
 
 
   agent:
@@ -122,6 +130,7 @@ services:
       
 volumes:
   dbdata6:
+  esdata:
 
 
 
