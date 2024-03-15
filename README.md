@@ -9,4 +9,4 @@ This config file contains configurations of Eureka Discovery module
 this config file contains configuration of RMM agent
 
 ### 3.worker.yml
-this config f
+this config file contains configuration of RMM worker
