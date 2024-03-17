@@ -13,3 +13,5 @@ this config file contains configuration of RMM worker
 
 ### 4. build.sh
 This bash file contains some code to clone and build hole project
+
+### 5.RMM.sh
