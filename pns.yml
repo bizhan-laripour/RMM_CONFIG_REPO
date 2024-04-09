@@ -7,4 +7,4 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
   kafka:
-    bootstrap-servers: 127.0.0.1:9092
+    bootstrap-servers: kafka:9092
