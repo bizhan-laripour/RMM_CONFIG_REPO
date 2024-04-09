@@ -10,7 +10,8 @@ RMM_CONFIG_REPO
 RMM_DISCOVERY       
 RMM_CONFIG_SERVER      
 RMM_WORKER      
-RMM_AGENT      
+RMM_AGENT 
+PNS
 )
 declare -a exist=()    
 for val in "${all[@]}";do
@@ -62,6 +63,8 @@ cd ../RMM_DISCOVERY || exit
 sudo -S  sudo docker build -t discovery .
 cd ../RMM_AGENT || exit
  sudo -S  sudo docker build -t agent .
+cd ../PNS || exit
+ sudo -S  sudo docker build -t pns .
 cd ../RMM_WORKER || exit
  sudo -S  sudo docker build -t worker .
 cd ../RMM_CONFIG_REPO/docker-compose || exit
