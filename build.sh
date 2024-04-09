@@ -14,6 +14,15 @@ ${bold} ${NONE}Hello from ${RED}RMM${NONE}. Im ${GREEN}Bizhan Laripour ${NONE}an
 
 "
 
+if test -d ./PNS; then
+  echo  -e "${normal}${YELLOW}RMM_CONFIG_REPO exists. we will remove it and clone new one from github. enter ${GREEN}Yes(Y)${NONE} to confirm or ${RED}No(N) ${NONE}to use existing repository ${NONE}"
+  read confirmation
+  if [ $confirmation == Yes ] || [ $confirmation == yes ] || [ $confirmation == y ]  || [ $confirmation == Y ]; then
+  sudo -S  sudo rm -rf ./PNS
+  git clone https://github.com/bizhan-laripour/PNS.git
+  fi
+fi
+
 if test -d ./RMM_CONFIG_REPO; then
   echo  -e "${normal}${YELLOW}RMM_CONFIG_REPO exists. we will remove it and clone new one from github. enter ${GREEN}Yes(Y)${NONE} to confirm or ${RED}No(N) ${NONE}to use existing repository ${NONE}"
   read confirmation
@@ -67,6 +76,10 @@ cd ../RMM_AGENT || exit
  sudo -S  sudo docker build -t agent .
 cd ../RMM_WORKER || exit
  sudo -S  sudo docker build -t worker .
+
+cd ../PNS || exit
+ sudo -S  sudo docker build -t pns .
+
 cd ../RMM_CONFIG_REPO/docker-compose || exit
 sudo -S  sudo docker compose up -d
 
