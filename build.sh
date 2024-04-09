@@ -8,7 +8,7 @@ GREEN='\033[01;32m'
 echo -e "
 
 
-${bold} ${NONE}Hello from ${RED}RMM${NONE}. Im ${GREEN}Bizhan Laripour ${NONE}and wish you enjoy with this project.
+${bold} ${NONE}Hello from ${RED}RMM$ ${NONE}and wish you enjoy with this project.
 
 
 
@@ -76,7 +76,6 @@ cd ../RMM_AGENT || exit
  sudo -S  sudo docker build -t agent .
 cd ../RMM_WORKER || exit
  sudo -S  sudo docker build -t worker .
-
 cd ../PNS || exit
  sudo -S  sudo docker build -t pns .
 
