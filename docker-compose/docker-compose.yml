@@ -114,7 +114,19 @@ services:
     environment:
       - spring.cloud.config.uri=http://config-server:8888
 
-      
+  
+
+  pns:
+    image: pns
+    depends_on:
+      config-server:
+        condition: service_started
+    restart: on-failure
+    container_name: pns
+    ports:
+      - 8051:8051
+    environment:
+      - spring.cloud.config.uri=http://config-server:8888    
 
 
   agent:
