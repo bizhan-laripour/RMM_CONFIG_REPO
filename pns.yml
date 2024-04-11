@@ -8,3 +8,6 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
   kafka:
     bootstrap-servers: kafka:9092
+
+server:
+  port: 8051
