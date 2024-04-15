@@ -11,3 +11,7 @@ spring:
 
 server:
   port: 8051
+
+gcp:
+  firebase:
+    service-account: classpath:rmmproject-b5d34-firebase-adminsdk-el1yj-05316f553f.json
