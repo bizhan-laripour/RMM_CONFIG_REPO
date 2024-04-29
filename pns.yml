@@ -14,4 +14,4 @@ server:
 
 gcp:
   firebase:
-    service-account: classpath:rmmproject-b5d34-firebase-adminsdk-el1yj-05316f553f.json
+    service-account: classpath:rmmproject.json
