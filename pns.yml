@@ -15,3 +15,7 @@ server:
 gcp:
   firebase:
     service-account: classpath:rmmproject.json
+
+first-schedule-rate: 60000
+second-schedule-rate: 120000
+third-schedule-rate: 180000
