@@ -7,7 +7,6 @@ YELLOW='\033[01;33m'
 GREEN='\033[01;32m'
 echo -e "
 
-
 ${bold} ${NONE}Hello from ${RED}RMM$ ${NONE}and wish you enjoy with this project.
 
 
