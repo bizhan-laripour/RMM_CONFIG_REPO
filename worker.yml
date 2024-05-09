@@ -20,4 +20,4 @@ external:
 
 elastic:
   server:
-    port: elasticsearch-container:9200
+    port: elasticsearch:9200
