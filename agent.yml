@@ -20,6 +20,7 @@ spring:
 kafka:
   group:
     id: spring-boot-api-consumer
+  bootstrap-servers: kafka:
 logging:
   level:
     org:
