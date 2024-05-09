@@ -141,10 +141,10 @@ services:
     restart: on-failure
     container_name: agent
     environment:
-#      - SPRING_RABBITMQ_HOST=rabbitmq
-#      - SPRING_RABBITMQ_PORT=5672
-#      - SPRING_DATA_MONGODB_HOST=mongodb
-#      - SPRING_DATA_MONGODB_PORT=27017
+      - SPRING_RABBITMQ_HOST=rabbitmq
+      - SPRING_RABBITMQ_PORT=5672
+      - SPRING_DATA_MONGODB_HOST=mongodb
+      - SPRING_DATA_MONGODB_PORT=27017
       - eureka.client.service-url.defaultZone=http://discovery:8761/eureka
       - spring.cloud.config.uri=http://config-server:8888
     ports:
