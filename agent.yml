@@ -3,7 +3,7 @@ spring:
     name: agent
   data:
     mongodb:
-      host: mongodb
+      host: 127.0.01
       port: 27017
       username: rootuser
       password: rootpass
@@ -13,7 +13,7 @@ spring:
     listener:
       simple:
         default-requeue-rejected: true
-    host: rabbitmq
+    host: 127.0.0.1
     port: 5672
     username: guest
     password: guest
