@@ -3,6 +3,7 @@ RED='\033[0;31m'
 YELLOW='\033[01;33m'  
 GREEN='\033[01;32m'  
 echo -e "Hello from ${RED}RMM${NONE}. I wish you enjoy with this project. 
+
 "                                                    
 declare -a all=(   
 RMM_CONFIG_REPO     
